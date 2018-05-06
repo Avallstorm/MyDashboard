@@ -4,7 +4,8 @@
   "description": "Site to display stuff",
   "main": "index.js",
   "scripts": {
-    "test": "sitetest"
+    "start": "node server.js",
+    "devstart": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
     "node": "^7.3",
     "request": "^2.85.0",
     "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
   }
 }
