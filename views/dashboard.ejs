@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Ava's DashBoard</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="row">
+		<div class="col col-sm-4">
+			<div class="panel">
+				<div class="panel-body">
+					<H6>Weather:</H6>
+					<% if(weather !== null){ %>
+						<H6 class="centered"><%= weather %></H6>
+						<img class="logo" src="../assets/<%= wlogo %>.png" alt="<%= wlogo %>" height="40" width="40">
+					<% } %>
+
+					<% if(weather === null){ %>
+						<p>Data Unavailable</p>
+					<% } %>
+
+					<% if(werror !== null){ %>
+						<p><%= werror %></p>
+					<% } %>
+				</div>
+			</div>
+		</div>
+		<div class="col col-sm-4">
+			<div class="panel">
+				<div class="panel-body">
+					<H6>Forecast:</H6>
+					<% if(forecast !== null){ %>
+						<H6 class="centered"><%= forecast %></H6>
+						<img class="logo" src="../assets/<%= flogo %>.png" alt="<%= flogo %>" height="40" width="40">
+					<% } %>
+
+					<% if(forecast === null){ %>
+						<p>Data Unavailable</p>
+					<% } %>
+
+					<% if(ferror !== null){ %>
+						<p><%= ferror %></p>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html> 
