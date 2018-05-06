@@ -12,6 +12,16 @@ app.use("/assets", express.static(__dirname + '/assets'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
+function getweather(city,key,callback){
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city},CA&units=metric&appid=${key}`
+  request(url,callback)
+}
+
+function getforecast(city,key,callback){
+  let url = `http://api.openweathermap.org/data/2.5/forecast?q=${city},CA&units=metric&appid=${key}`
+  request(url,callback)
+}
+
 app.get('/', function (req, res) {
   let city = "Waterloo";
   let wurl = `http://api.openweathermap.org/data/2.5/weather?q=${city},CA&units=metric&appid=${apiKey}`
